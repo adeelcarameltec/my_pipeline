@@ -1,15 +1,17 @@
-stage('build') {
-    echo "Build"
-}
+pipeline {
+    agent any 
 
-nodejs {
-    node server.js
-}
-
-stage('test') {
-    echo "Test"
-}
-
-stage('deploy') {
-    echo "deploy"
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'node server.js' 
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'make publish'
+            }
+        }
+    }
 }

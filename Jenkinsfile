@@ -1,7 +1,7 @@
-pipeline {
-    agent any 
+node('node') {
+    
 
-    stages {
+    
         stage('Build') { 
             steps { 
                 echo 'make' 
@@ -17,5 +17,5 @@ pipeline {
                 echo 'make publish'
             }
         }
-    }
-}t
+    
+}

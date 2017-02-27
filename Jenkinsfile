@@ -2,8 +2,8 @@ stage('build') {
     echo "Build"
 }
 
-stage('run') {
-    sh "node server.js"
+nodejs {
+    node server.js
 }
 
 stage('test') {
